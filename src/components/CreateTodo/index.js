@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import CreateTodoButton from './CreateTodoButton/'
+import TodoInput from './TodoInput/'
 class CreateTodo extends Component {
   constructor(){
     super()
@@ -8,7 +9,8 @@ class CreateTodo extends Component {
   render() {
     return (
       <div>
-
+        <TodoInput />
+        <CreateTodoButton />
       </div>
     );
   }

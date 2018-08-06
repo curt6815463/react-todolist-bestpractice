@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Title from './components/Title/'
-
+import CreateTodo from './components/CreateTodo/'
 class App extends Component {
   constructor(){
     super()
@@ -12,6 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <Title />
+        <CreateTodo />
       </div>
     );
   }
