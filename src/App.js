@@ -7,8 +7,33 @@ import TodoList from './components/TodoList/'
 class App extends Component {
   constructor(){
     super()
+
+    let todos = {
+      {
+        text:'吃飯'，
+        groupId:'living'
+      },
+      {
+        text:'睡覺'，
+        groupId:'work'
+      },
+      {
+        text:'打東東'，
+        groupId:'family'
+      }
+    };
+
+    let groups = [
+      { name: '全部', id: undefined },
+      { name: '生活', id: 'living' },
+      { name: '工作', id: 'work' },
+      { name: '家庭', id: 'family' }
+    ];
+
     this.state = {
-      todos : ['吃飯','睡覺','打東東','睡覺','打東東','睡覺','打東東']
+      todos: todos,
+      groups: groups,
+      activeGroupId: undefined
     }
   }
 
