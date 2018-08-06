@@ -11,12 +11,19 @@ class App extends Component {
       todos : ['吃飯','睡覺','打東東','睡覺','打東東','睡覺','打東東']
     }
   }
+
+  createTodo = (newTodo) => {
+    this.setState({
+      todos:[...this.state.todos,newTodo]
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <Title todos={this.state.todos}/>
-        <CreateTodo />
-        <TodoList todos={this.state.todos}/>        
+        <CreateTodo createTodo={this.createTodo}/>
+        <TodoList todos={this.state.todos}/>
       </div>
     );
   }

@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 
 class CreateTodoButton extends Component {
-  constructor(){
-    super()
 
-  }
   render() {
     return (
-        <input type='button' value='新增代辦事項'/>
+        <input type='button' value='新增代辦事項' onClick={this.props.createTodo}/>
     );
   }
 }
