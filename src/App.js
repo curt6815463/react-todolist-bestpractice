@@ -3,7 +3,7 @@ import Title from './components/Title/'
 import CreateTodo from './components/CreateTodo/'
 import TodoList from './components/TodoList/'
 import AllGroupsTabContent from './components/AllGroupsTabContent/'
-
+import GroupTabContent from './components/GroupTabContent/'
 
 class App extends Component {
   constructor(){
@@ -38,7 +38,11 @@ class App extends Component {
     }
   }
 
-  createTodo = (newTodo) => {
+  createTodo = (newTodoText) => {
+    let newTodo = {
+      text: newTodoText,
+      groupId: 'living'
+    }
     this.setState({
       todos:[...this.state.todos,newTodo]
     })
@@ -52,6 +56,7 @@ class App extends Component {
         <CreateTodo createTodo={this.createTodo}/>
         <TodoList todos={this.state.todos}/> */}
         <AllGroupsTabContent todos={this.state.todos} />
+        <GroupTabContent todos={this.state.todos} createTodo={this.createTodo}/>
       </div>
     );
   }
