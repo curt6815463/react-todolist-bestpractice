@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Title from './components/Title/'
 import CreateTodo from './components/CreateTodo/'
+import TodoList from './components/TodoList/'
+
+
 class App extends Component {
   constructor(){
     super()
@@ -13,6 +16,7 @@ class App extends Component {
       <div className="App">
         <Title todos={this.state.todos}/>
         <CreateTodo />
+        <TodoList />
       </div>
     );
   }
