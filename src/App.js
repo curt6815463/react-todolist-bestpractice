@@ -2,26 +2,27 @@ import React, { Component } from 'react';
 import Title from './components/Title/'
 import CreateTodo from './components/CreateTodo/'
 import TodoList from './components/TodoList/'
+import AllGroupsTabContent from './components/AllGroupsTabContent/'
 
 
 class App extends Component {
   constructor(){
     super()
 
-    let todos = {
+    let todos = [
       {
-        text:'吃飯'，
+        text:'吃飯',
         groupId:'living'
       },
       {
-        text:'睡覺'，
+        text:'睡覺',
         groupId:'work'
       },
       {
-        text:'打東東'，
+        text:'打東東',
         groupId:'family'
       }
-    };
+    ];
 
     let groups = [
       { name: '全部', id: undefined },
@@ -33,7 +34,7 @@ class App extends Component {
     this.state = {
       todos: todos,
       groups: groups,
-      activeGroupId: undefined
+      activeGroupId: undefined,
     }
   }
 
@@ -44,11 +45,13 @@ class App extends Component {
   }
 
   render() {
+    let tabContent = <AllGroupsTabContent todos={this.state.todos} />
     return (
       <div className="App">
-        <Title todos={this.state.todos}/>
+        {/* <Title todos={this.state.todos}/>
         <CreateTodo createTodo={this.createTodo}/>
-        <TodoList todos={this.state.todos}/>
+        <TodoList todos={this.state.todos}/> */}
+        <AllGroupsTabContent todos={this.state.todos} />
       </div>
     );
   }

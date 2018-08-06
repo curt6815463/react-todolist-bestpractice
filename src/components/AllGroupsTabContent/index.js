@@ -12,11 +12,8 @@ class AllGroupsTabContent extends Component {
   render() {
     return (
       <div>
-          <Title todos={this.props.todos}/>
-          <TodoList
-            todos={this.props.todos}
-            remove={this.props.removeTodo}
-          />
+        <Title todos={this.props.todos}/>
+        <TodoList todos={this.props.todos}/>
       </div>
     );
   }
