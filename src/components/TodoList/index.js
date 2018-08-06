@@ -6,7 +6,11 @@ class TodoList extends Component {
   render() {
     return (
       <div>
-        <Todo />
+        {
+          this.props.todos.map((todo, index) => {
+            return <Todo key={index} todo={todo} />
+          })
+        }
       </div>
     );
   }

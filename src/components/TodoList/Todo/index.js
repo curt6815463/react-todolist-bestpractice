@@ -4,7 +4,7 @@ class Todo extends Component {
   render() {
     return (
       <div>
-        打東東
+        {this.props.todo}
       </div>
     );
   }

@@ -16,7 +16,7 @@ class App extends Component {
       <div className="App">
         <Title todos={this.state.todos}/>
         <CreateTodo />
-        <TodoList />
+        <TodoList todos={this.state.todos}/>        
       </div>
     );
   }
