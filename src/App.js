@@ -38,7 +38,7 @@ class App extends Component {
   createTodo = (newTodoText) => {
     let newTodo = {
       text: newTodoText,
-      groupId: 'living'
+      groupId: this.state.activeGroupId
     }
     this.setState({
       todos:[...this.state.todos,newTodo]
@@ -52,12 +52,18 @@ class App extends Component {
   }
 
   render() {
-    let tabContent = <AllGroupsTabContent todos={this.state.todos} />
+    let todos = this.state.activeGroupId ? this.state.todos.filter((todo) => {
+      return todo.groupId === this.state.activeGroupId ? true : false
+    }) : this.state.todos;
+
+    let tabContent = this.state.activeGroupId ?
+      <GroupTabContent todos={todos} createTodo={this.createTodo}/> :
+      <AllGroupsTabContent todos={todos} />
+
     return (
       <div className="App">
         <GroupSwitch switchGroup={this.switchGroup} groups={this.state.groups}/>
-        <AllGroupsTabContent todos={this.state.todos} />
-        <GroupTabContent todos={this.state.todos} createTodo={this.createTodo}/>
+        {tabContent}
       </div>
     );
   }
