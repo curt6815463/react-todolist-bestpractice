@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-import Title from './components/Title/'
-import CreateTodo from './components/CreateTodo/'
-import TodoList from './components/TodoList/'
 import AllGroupsTabContent from './components/AllGroupsTabContent/'
 import GroupTabContent from './components/GroupTabContent/'
-
+import GroupSwitch from './components/GroupSwitch/'
 class App extends Component {
   constructor(){
     super()
@@ -48,13 +45,17 @@ class App extends Component {
     })
   }
 
+  switchGroup(groupid) {
+    this.setState({
+      activeGroupId: groupid
+    })
+  }
+
   render() {
     let tabContent = <AllGroupsTabContent todos={this.state.todos} />
     return (
       <div className="App">
-        {/* <Title todos={this.state.todos}/>
-        <CreateTodo createTodo={this.createTodo}/>
-        <TodoList todos={this.state.todos}/> */}
+        <GroupSwitch groups={this.state.groups}/>
         <AllGroupsTabContent todos={this.state.todos} />
         <GroupTabContent todos={this.state.todos} createTodo={this.createTodo}/>
       </div>
