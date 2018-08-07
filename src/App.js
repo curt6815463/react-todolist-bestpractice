@@ -45,9 +45,9 @@ class App extends Component {
     })
   }
 
-  switchGroup(groupid) {
+  switchGroup = (groupId) => {
     this.setState({
-      activeGroupId: groupid
+      activeGroupId: groupId
     })
   }
 
@@ -55,7 +55,7 @@ class App extends Component {
     let tabContent = <AllGroupsTabContent todos={this.state.todos} />
     return (
       <div className="App">
-        <GroupSwitch groups={this.state.groups}/>
+        <GroupSwitch switchGroup={this.switchGroup} groups={this.state.groups}/>
         <AllGroupsTabContent todos={this.state.todos} />
         <GroupTabContent todos={this.state.todos} createTodo={this.createTodo}/>
       </div>

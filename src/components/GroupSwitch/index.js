@@ -11,8 +11,15 @@ class GroupSwitch extends Component {
     return (
       <span>
         {
-          this.props.groups.map((group) => {
-            return <span>{group.name}</span>
+          this.props.groups.map((group, index) => {
+            return(
+              <span
+                onClick={()=> {this.props.switchGroup(group.id)}}
+                key={index}
+                >
+                  {group.name}
+                </span>
+            )
           })
         }
       </span>
